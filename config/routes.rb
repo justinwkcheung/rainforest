@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
+  get 'users/create'
+
+  get 'new/create'
+
   # get 'products/index'
   #
   # get 'products/show'
@@ -8,6 +14,8 @@ Rails.application.routes.draw do
   # get 'products/edit'
 
   resources :products
+
+  resources :users, only: [:new, :create]
 
   root "products#index"
 
