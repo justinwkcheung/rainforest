@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
-  get 'users/new'
+  # get 'sessions/new'
+  #
+  # get 'sessions/create'
+  #
+  # get 'sessions/destroy'
 
-  get 'users/create'
-
-  get 'new/create'
+  # get 'users/new'
+  #
+  # get 'users/create'
+  #
+  # get 'new/create'
 
   # get 'products/index'
   #
@@ -16,6 +22,8 @@ Rails.application.routes.draw do
   resources :products
 
   resources :users, only: [:new, :create]
+
+  resources :sessions, only: [:new, :create, :destroy]
 
   root "products#index"
 
