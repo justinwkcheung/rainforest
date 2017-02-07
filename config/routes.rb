@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  # get 'reviews/show'
+  #
+  # get 'reviews/create'
+  #
+  # get 'reviews/destroy'
+
   # get 'sessions/new'
   #
   # get 'sessions/create'
@@ -19,7 +25,9 @@ Rails.application.routes.draw do
   #
   # get 'products/edit'
 
-  resources :products
+  resources :products do
+    resources :reviews, only: [:show, :create, :destroy]
+  end
 
   resources :users, only: [:new, :create]
 
